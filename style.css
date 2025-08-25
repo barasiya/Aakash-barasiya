@@ -149,7 +149,7 @@ body {
 }
 
 .hero-left h1 {
-  font-size: 70px;
+  font-size: 60px;
   margin-bottom: 15px;
   background: linear-gradient(90deg, #00f5ff, #ff6ec7, #ffcc00);
   -webkit-background-clip: text;
@@ -232,4 +232,3 @@ body {
 
   .social-icons-right { display:none; }
 }
-
