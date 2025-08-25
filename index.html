@@ -98,16 +98,29 @@
   <!-- ===== Scripts ===== -->
   <script>
     // Typed.js
-    var typed = new Typed('.typing', {
-      strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 1000,
-      startDelay: 500,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|'
-    });
+   var typed = new Typed('.typing', {
+  strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+  typeSpeed: 60,
+  backSpeed: 40,
+  backDelay: 1000,
+  startDelay: 500,
+  loop: true,
+  showCursor: true,
+  cursorChar: '|'
+});
+
+// Mobile version
+var typedMobile = new Typed('.typing-mobile', {
+  strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+  typeSpeed: 60,
+  backSpeed: 40,
+  backDelay: 1000,
+  startDelay: 500,
+  loop: true,
+  showCursor: true,
+  cursorChar: '|'
+});
+
 
     // Hamburger Toggle
     const hamburger = document.getElementById('hamburger');
