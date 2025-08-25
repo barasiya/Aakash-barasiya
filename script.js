@@ -1,4 +1,6 @@
 // ===== Typed.js Initialization =====
+
+// Desktop typing
 var typed = new Typed('.typing', {
   strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
   typeSpeed: 60,       // typing speed
@@ -7,6 +9,18 @@ var typed = new Typed('.typing', {
   startDelay: 500,     // initial delay
   loop: true,          // loop infinitely
   showCursor: true,    // display cursor
+  cursorChar: '|'
+});
+
+// Mobile typing
+var typedMobile = new Typed('.typing-mobile', {
+  strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+  typeSpeed: 60,
+  backSpeed: 40,
+  backDelay: 1000,
+  startDelay: 500,
+  loop: true,
+  showCursor: true,
   cursorChar: '|'
 });
 
@@ -41,7 +55,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== Optional: Highlight Active Nav Link on Scroll =====
+// ===== Highlight Active Nav Link on Scroll =====
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links li a');
 
