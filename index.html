@@ -73,53 +73,55 @@
     </ul>
   </header>
 
-  <!-- ===== Hero Section ===== -->
-  <section id="home" class="hero video-section">
-    <video class="bg-video" autoplay muted loop>
-      <source src="/36471-410610193.mp4" type="video/mp4">
-    </video>
+ <!-- ===== Hero Section ===== -->
+<section id="hero" class="hero">
+  <video class="bg-video" autoplay muted loop>
+    <source src="/126662-736705634.mp4" type="video/mp4">
+  </video>
 
-   <div class="hero-left">
-  <div class="line"></div>
-  <h1>Hi, I'm <span class="name">Aakash Barasiya</span></h1>
-  <h2 class="typing"></h2>
-  <h2 class="typing-mobile"></h2> <!-- mobile typing -->
-</div>
-
-
-
-    <div class="scroll-down">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="line"></div>
+      <h1>Hi, I'm <span class="name">Aakash Barasiya</span></h1>
+      <h2 class="typing"></h2>
+      <h2 class="typing-mobile"></h2> <!-- mobile typing -->
     </div>
-  </section>
+  </div>
 
-  <!-- ===== Scripts ===== -->
-  <script>
-    // Typed.js
-   var typed = new Typed('.typing', {
-  strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
-  typeSpeed: 60,
-  backSpeed: 40,
-  backDelay: 1000,
-  startDelay: 500,
-  loop: true,
-  showCursor: true,
-  cursorChar: '|'
-});
+  <!-- Scroll Down Animation -->
+  <div class="scroll-down">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
 
-// Mobile version
-var typedMobile = new Typed('.typing-mobile', {
-  strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
-  typeSpeed: 60,
-  backSpeed: 40,
-  backDelay: 1000,
-  startDelay: 500,
-  loop: true,
-  showCursor: true,
-  cursorChar: '|'
-});
+<!-- ===== Scripts ===== -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  // Desktop typing
+  var typed = new Typed('.typing', {
+    strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1000,
+    startDelay: 500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|'
+  });
+
+  // Mobile typing
+  var typedMobile = new Typed('.typing-mobile', {
+    strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1000,
+    startDelay: 500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|'
+  });
 
 
     // Hamburger Toggle
