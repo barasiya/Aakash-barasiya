@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aakash | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="Education.css">
+
+<!-- Link Certifications CSS -->
+<link rel="stylesheet" href="Certifications.css">
+
+
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+
+ <!-- ===== Navbar ===== -->
+<header>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="Aakash_Resume.pdf" target="_blank">Resume</a></li>
+    </ul>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile Nav Links -->
+    <ul class="nav-links-mobile" id="mobileMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="Aakash_Resume.pdf" target="_blank">Resume</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <!-- Right Social Icons -->
+    <ul class="social-icons-right">
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-github"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-discord"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+    </ul>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero video-section">
+    <video class="bg-video" autoplay muted loop>
+      <source src="126662-736705634.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+  <div class="hero-left">
+    <div class="line"></div>
+    <h1>Hi, I'm <span class="name">Aakash Barasiya</span></h1>
+    <h2 class="typing"></h2>
+  </div>
+</div>
+
+
+    <div class="scroll-down">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    // Typed.js
+    var typed = new Typed('.typing', {
+      strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+
+    // Hamburger Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.querySelectorAll('.nav-links-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== Education Section ===== -->
+<section id="education" class="education-section video-section">
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="/36471-410610193.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="section-content">
+    <div class="education-heading-card">
+      <h1 class="section-title">🎓 Education</h1>
+      <p class="section-subtitle">Academic Background</p>
+    </div>
+
+    <div class="education-container">
+      <!-- College Card -->
+      <div class="education-card tilt">
+        <img src="sistec.jpeg" alt="SISTec Logo" class="edu-logo">
+        <h3>SISTec College</h3>
+        <p>B.Tech in Computer Science</p>
+        <span>2020 - 2024</span>
+      </div>
+
+      <!-- High School Card -->
+      <div class="education-card tilt">
+        <img src="highschool.jpeg" alt="High School Logo" class="edu-logo">
+        <h3>XYZ High School</h3>
+        <p>Senior Secondary Education</p>
+        <span>2018 - 2020</span>
+      </div>
+
+      <!-- Secondary School Card -->
+      <div class="education-card tilt">
+        <img src="secondaryschool.jpeg" alt="Secondary School Logo" class="edu-logo">
+        <h3>ABC School</h3>
+        <p>Secondary Education</p>
+        <span>2016 - 2018</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== Certifications Section ===== -->
+<section id="certifications" class="certifications-section video-section">
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="126662-736705634.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="section-content">
+    <div class="certifications-heading-card">
+      <h1 class="section-title">📜 Certifications</h1>
+      <p class="section-subtitle">Professional Achievements</p>
+    </div>
+
+    <div class="cert-grid">
+      <!-- Example Certification Card -->
+      <div class="cert-card">
+        <img src="q.png" alt="Cybersecurity Essentials" class="cert-logo"/>
+        <h3>Cybersecurity Essentials</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Networking Basics, Security Fundamentals</span>
+        <a href="q.pdf" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <img src="w.png" alt="CCNA: Introduction to Networks" class="cert-logo"/>
+        <h3>CCNA: Introduction to Networks</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Routing, Switching, Network Fundamentals</span>
+        <a href="w.pdf" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <!-- Add remaining certificates here in same format -->
+    </div>
+  </div>
+</section>

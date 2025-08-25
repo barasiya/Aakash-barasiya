@@ -1,0 +1,168 @@
+/* ===== Education Section with Video & Glassmorphism ===== */
+.education-section.video-section {
+  position: relative;
+  padding: 120px 50px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.education-section .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.25; /* softer overlay for readability */
+}
+
+.education-section .section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading */
+.education-heading-card {
+  margin-bottom: 70px;
+}
+
+.section-title {
+  font-size: 3.5rem; /* bigger font */
+  font-weight: 700;
+  color: #00f5ff;
+  text-shadow: 0 0 15px #00f5ff55;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  font-size: 1.5rem; /* bigger subtitle */
+  color: #ccc;
+  letter-spacing: 1.2px;
+}
+
+/* Education Cards Container */
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Education Cards */
+.education-card {
+  background: rgba(255, 255, 255, 0.06); /* glass effect */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 25px;
+  padding: 50px 30px; /* bigger padding */
+  width: 320px; /* bigger cards */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 245, 255, 0.25);
+}
+
+.education-card:hover {
+  transform: translateY(-18px) rotateX(10deg) rotateY(10deg);
+  box-shadow: 0 30px 60px rgba(0, 245, 255, 0.55);
+}
+
+/* Logo */
+.education-card img.edu-logo {
+  width: 100px; /* bigger logo */
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  border: 2px solid #00f5ff;
+  box-shadow: 0 0 20px #00f5ff55;
+}
+
+/* Card Text */
+.education-card h3 {
+  font-size: 1.8rem; /* bigger text */
+  margin-bottom: 10px;
+  color: #00f5ff;
+  text-shadow: 0 0 10px #00f5ff33;
+}
+
+.education-card p {
+  font-size: 1.2rem; /* bigger text */
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.education-card span {
+  font-size: 1rem; /* bigger date text */
+  color: #aaa;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .section-title {
+    font-size: 3rem;
+  }
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+  .education-card {
+    width: 300px;
+    padding: 45px 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-card {
+    width: 85%;
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+  }
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .education-card {
+    width: 95%;
+    padding: 35px 15px;
+  }
+
+  .education-card img.edu-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .education-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .education-card p {
+    font-size: 1rem;
+  }
+
+  .education-card span {
+    font-size: 0.95rem;
+  }
+}
