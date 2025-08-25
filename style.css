@@ -124,7 +124,7 @@ body {
 .hero {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: flex-start;     /* 👈 top aligned */
   justify-content: flex-start;
@@ -232,3 +232,4 @@ body {
 
   .social-icons-right { display:none; }
 }
+
