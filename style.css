@@ -1,5 +1,6 @@
 :root {
   --primary-color: #00f5ff;
+  --secondary-color: #ff6ec7;
   --text-color: #ffffff;
   --bg-color: #0d0d0d;
   --font-family: 'Poppins', sans-serif;
@@ -25,18 +26,20 @@ body {
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center links horizontally */
   align-items: center;
   padding: 15px 40px;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  z-index: 999;
   font-size: 1.2rem;
 }
 
+/* ===== Nav Links ===== */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 40px;
+  z-index: 1000;
 }
 
 .nav-links a {
@@ -59,6 +62,7 @@ body {
   gap: 6px;
   position: absolute;
   right: 40px;
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -79,7 +83,7 @@ body {
   flex-direction: column;
   background: rgba(0, 0, 0, 0.95);
   padding: 20px 0;
-  z-index: 99;
+  z-index: 998;
   text-align: center;
 }
 
@@ -126,10 +130,10 @@ body {
   width: 100vw;
   height: 80vh;
   display: flex;
-  align-items: flex-start;     /* 👈 top aligned */
+  align-items: flex-start;
   justify-content: flex-start;
   padding-left: 70px;
-  padding-top: 120px;          /* 👈 navbar ke neeche space */
+  padding-top: 120px;
   overflow: hidden;
 }
 
@@ -151,7 +155,7 @@ body {
 .hero-left h1 {
   font-size: 60px;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, #00f5ff, #ff6ec7, #ffcc00);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
@@ -160,13 +164,12 @@ body {
 
 .hero-left h2.typing {
   font-size: 2.5rem;
-  color: #00f5ff;
+  color: var(--primary-color);
   font-weight: 600;
   line-height: 1.2;
   text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile-typed hidden by default */
 .typing-mobile {
   display: none;
 }
@@ -216,7 +219,6 @@ body {
   .hero-left h1 { font-size: 2.2rem; }
   .hero-left h2.typing { display: none; font-size: 1.6rem; }
 
-  /* Mobile-typed visible */
   .typing-mobile {
     display: block;
     margin-top: 20px;
@@ -226,9 +228,6 @@ body {
     font-weight: 600;
   }
 
-  .nav-links-mobile {
-    font-size: 1.3rem;
-  }
-
+  .nav-links-mobile { font-size: 1.3rem; }
   .social-icons-right { display:none; }
 }

@@ -6,42 +6,27 @@
   <title>Aakash | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Main CSS -->
+  <!-- CSS Files -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Education Section CSS -->
   <link rel="stylesheet" href="Education.css">
-
-  <!-- Certifications Section CSS -->
   <link rel="stylesheet" href="Certifications.css">
-
-  <!-- Skills Section CSS -->
   <link rel="stylesheet" href="Skills.css">
-
   <link rel="stylesheet" href="projects.css">
-
-   <!-- About Section CSS -->
   <link rel="stylesheet" href="about.css">
-
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="footer.css">
 
-  <!-- Footer CSS -->
-<link rel="stylesheet" href="footer.css">
-
-
-
-  <!-- Typed.js for typing effect -->
+  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
-
- <!-- ===== Navbar ===== -->
+<!-- ===== Navbar ===== -->
 <header>
   <nav class="navbar">
     <ul class="nav-links">
@@ -52,16 +37,14 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
-      </ul>
+    </ul>
 
-    <!-- Hamburger Menu for Mobile -->
+    <!-- Hamburger -->
     <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
-    <!-- Mobile Nav Links -->
+    <!-- Mobile Menu -->
     <ul class="nav-links-mobile" id="mobileMenu">
       <li><a href="#home">Home</a></li>
       <li><a href="#education">Education</a></li>
@@ -74,86 +57,72 @@
   </nav>
 </header>
 
-
-    <!-- ===== Right Social Icons ===== -->
+<!-- ===== Social Icons ===== -->
 <ul class="social-icons-right">
-  <li><a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-  <li><a href="https://github.com/barasiya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-  <li><a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-  <li><a href="https://discord.com/" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a></li>
-  <li><a href="https://www.instagram.com/akash_12sia_02" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-  <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="https://github.com/barasiya" target="_blank"><i class="fab fa-github"></i></a></li>
+  <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+  <li><a href="https://discord.com/" target="_blank"><i class="fab fa-discord"></i></a></li>
+  <li><a href="https://www.instagram.com/akash_12sia_02" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
 </ul>
 
-
- <!-- ===== Hero Section ===== -->
-<section id="hero" class="hero">
+<!-- ===== Hero Section ===== -->
+<section id="home" class="hero">
   <video class="bg-video" autoplay muted loop>
     <source src="/126662-736705634.mp4" type="video/mp4">
   </video>
-
   <div class="hero-content">
     <div class="hero-left">
       <div class="line"></div>
       <h1>Hi, I'm <span class="name">Aakash Barasiya</span></h1>
       <h2 class="typing"></h2>
-      <h2 class="typing-mobile"></h2> <!-- mobile typing -->
+      <h2 class="typing-mobile"></h2>
     </div>
   </div>
-
-  <!-- Scroll Down Animation -->
-  <div class="scroll-down">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div class="scroll-down"><span></span><span></span><span></span></div>
 </section>
 
 <!-- ===== Scripts ===== -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-  // Desktop typing
-  var typed = new Typed('.typing', {
+  // ===== Typed.js Animation =====
+  new Typed('.typing', {
     strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
     typeSpeed: 60,
     backSpeed: 40,
     backDelay: 1000,
-    startDelay: 500,
-    loop: true,
-    showCursor: true,
-    cursorChar: '|'
+    loop: true
   });
 
-  // Mobile typing
-  var typedMobile = new Typed('.typing-mobile', {
+  new Typed('.typing-mobile', {
     strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
     typeSpeed: 60,
     backSpeed: 40,
     backDelay: 1000,
-    startDelay: 500,
-    loop: true,
-    showCursor: true,
-    cursorChar: '|'
+    loop: true
   });
 
+  // ===== Hamburger Toggle =====
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-    // Hamburger Toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active'); // hamburger animation
+    mobileMenu.classList.toggle('open');  // show/hide mobile menu
+  });
 
-    hamburger.addEventListener('click', () => {
-      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  // ===== Close mobile menu on link click =====
+  document.querySelectorAll('.nav-links-mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
     });
-
-    document.querySelectorAll('.nav-links-mobile a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.style.display = 'none';
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
