@@ -25,11 +25,12 @@ body {
 .education-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  padding: 120px 40px;
+  min-height: 80vh;    /* कम किया height */
+  padding: 80px 30px;  /* कम किया padding */
   color: #fff;
   overflow: hidden;
 }
+
 
 /* Background Video */
 .education-section .bg-video {
