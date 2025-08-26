@@ -149,9 +149,29 @@
   background: #00f5ff22;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 992px) { .cert-grid { grid-template-columns: 1fr; gap: 25px; padding: 0 20px; } }
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1200px) {
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns even on smaller screens */
+    gap: 30px; 
+    padding: 0 20px; 
+  }
+}
+
+@media (max-width: 992px) {
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* Maintain 2 columns */
+    gap: 20px; 
+    padding: 0 15px; 
+  }
+}
+
 @media (max-width: 768px) {
-  .certifications-heading-card .section-title { font-size: 2.3rem; }
-  .certifications-heading-card .section-subtitle { font-size: 1rem; }
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on mobile */
+    gap: 15px; 
+    padding: 0 10px; 
+  }
+  .certifications-heading-card .section-title { font-size: 2.2rem; }
+  .certifications-heading-card .section-subtitle { font-size: 0.95rem; }
 }
