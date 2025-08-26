@@ -42,7 +42,7 @@
 /* ===== Heading Text Fix ===== */
 .skills-section .education-heading-card {
   position: relative;
-  z-index: 3; /* Video ke upar text */
+  z-index: 3;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -51,23 +51,23 @@
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: #00f5ff; /* Bright cyan for visibility */
-  text-shadow: 3px 3px 20px rgba(0, 245, 255, 0.9); /* Stronger for readability on video */
+  color: #00f5ff;
+  text-shadow: 3px 3px 20px rgba(0, 245, 255, 0.9);
 }
 
 .skills-section .section-subtitle {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #ffffff; /* White color for clarity */
-  text-shadow: 2px 2px 15px rgba(0, 245, 255, 0.6); /* Glow effect */
+  font-size: 1.6rem; /* Bada kiya */
+  font-weight: 600;  /* Thoda bold kiya */
+  color: #ffffff;
+  text-shadow: 2px 2px 15px rgba(0, 245, 255, 0.6);
   margin-top: 5px;
   text-align: center;
 }
 
 /* ===== Skill Category ===== */
 .skills-category-block h4.skill-category {
-  font-size: 1.7rem;
-  font-weight: 600;
+  font-size: 1.9rem; /* Bada kiya */
+  font-weight: 700;  /* Thoda bold */
   margin: 20px 0 15px;
   color: #00f5ff;
   text-shadow: 1px 1px 5px rgba(0, 245, 255, 0.4);
@@ -90,8 +90,8 @@
   border: 1px solid rgba(0, 245, 255, 0.2);
   border-radius: 20px;
   padding: 20px;
-  width: 140px;
-  height: 140px;
+  width: 150px; /* Thoda bada card */
+  height: 150px; /* Thoda bada card */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,15 +102,15 @@
 }
 
 .skills-section .skill-card img {
-  width: 60px;
-  height: 60px;
+  width: 70px;  /* Thoda bada image */
+  height: 70px; /* Thoda bada image */
   margin-bottom: 10px;
   transition: transform 0.4s ease;
 }
 
 .skills-section .skill-card p {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.2rem; /* Bada kiya */
+  font-weight: 600;  /* Bold */
   color: #fff;
   text-align: center;
 }
@@ -129,24 +129,27 @@
 /* ===== Responsive ===== */
 @media screen and (max-width: 1200px) {
   .skills-section .section-title { font-size: 2.5rem; }
-  .skills-section .section-subtitle { font-size: 1.2rem; }
-  .skills-section .skill-card { width: 130px; height: 130px; }
-  .skills-section .skill-card img { width: 50px; height: 50px; }
+  .skills-section .section-subtitle { font-size: 1.4rem; }
+  .skills-section .skill-card { width: 140px; height: 140px; }
+  .skills-section .skill-card img { width: 60px; height: 60px; }
+  .skills-section .skill-card p { font-size: 1.1rem; }
 }
 
 @media screen and (max-width: 768px) {
   .skills-section { padding: 50px 15px; }
   .skills-section .section-title { font-size: 2rem; }
-  .skills-section .section-subtitle { font-size: 1rem; }
-  .skills-section .skill-card { width: 120px; height: 120px; padding: 15px; }
-  .skills-section .skill-card img { width: 45px; height: 45px; }
+  .skills-section .section-subtitle { font-size: 1.2rem; }
+  .skills-section .skill-card { width: 130px; height: 130px; padding: 15px; }
+  .skills-section .skill-card img { width: 55px; height: 55px; }
+  .skills-section .skill-card p { font-size: 1.05rem; }
 }
 
 @media screen and (max-width: 480px) {
   .skills-section { padding: 40px 10px; }
   .skills-section .section-title { font-size: 1.6rem; }
-  .skills-section .section-subtitle { font-size: 0.95rem; }
-  .skills-section .skill-card { width: 100px; height: 100px; padding: 10px; }
-  .skills-section .skill-card img { width: 40px; height: 40px; }
+  .skills-section .section-subtitle { font-size: 1rem; }
+  .skills-section .skill-card { width: 120px; height: 120px; padding: 10px; }
+  .skills-section .skill-card img { width: 45px; height: 45px; }
+  .skills-section .skill-card p { font-size: 0.95rem; }
   .skills-section .skills-grid { gap: 12px; }
 }

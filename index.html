@@ -372,7 +372,7 @@
 <section id="projects" class="projects-section">
   <!-- Background Video -->
   <video class="bg-video" autoplay muted loop playsinline>
-    <source src="/10822-226624975.mp4" type="video/mp4">
+    <source src="/215500.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -487,74 +487,107 @@
 
 
 
-
 <!-- ===== About Section ===== -->
-<section id="about" class="about-section">
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="/36471-410610193.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <section id="about" class="about-section">
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="/36471-410610193.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <div class="section-content">
-    <div class="about-container">
+    <div class="section-content">
+      <div class="about-container">
 
-      <!-- Profile Card -->
-      <div class="profile-card">
-        <img src="/aakash.jpg" alt="Aakash Barasiya" class="profile-img">
-        <h2 class="profile-name">Aakash Barasiya</h2>
-        <p class="profile-role">Full Stack Developer | MERN Stack Enthusiast</p>
-        <p class="profile-bio">
-          Passionate developer with expertise in building scalable and responsive web applications. Skilled in MERN Stack, modern web technologies, and UI/UX design. I love creating interactive and dynamic user experiences.
-        </p>
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <img src="aakash.jpg" alt="Aakash Barasiya" class="profile-img">
+          <h2 class="profile-name">Aakash Barasiya</h2>
+          <p class="profile-role">Full Stack Developer | MERN Stack Enthusiast</p>
+          <p class="profile-bio">
+            Passionate developer with expertise in building scalable and responsive web applications. Skilled in MERN Stack, modern web technologies, and UI/UX design. I love creating interactive and dynamic user experiences.
+          </p>
 
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://github.com/barasiya" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/barasiya" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/barasiya" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="mailto:aakash@example.com"><i class="fas fa-envelope"></i></a>
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://github.com/barasiya" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/barasiya" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/barasiya" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:aakash@example.com"><i class="fas fa-envelope"></i></a>
+          </div>
+
+          <!-- Resume Button + Note -->
+          <div class="about-buttons">
+            <button id="resume-btn" class="btn-resume" title="Click to request access to resume">
+              📄 Download Resume
+            </button>
+            <p class="resume-note">*You need to request access to view this resume*</p>
+          </div>
         </div>
 
-        <!-- Resume Button -->
-<div class="about-buttons" style="margin-top: 20px; text-align: center;">
-  <a href="https://drive.google.com/file/d/1ypYdOfCVK2Xx1skmAJp74tPj8JyFN52R/view?usp=drive_link" 
-     target="_blank" 
-     class="btn-resume" 
-     title="Click to request access to resume">
-     📄 Download Resume
-  </a>
-  <p class="resume-note">*You need to request access to view this resume*</p>
-</div>
+        <!-- About Description -->
+        <div class="about-description">
+          <h3>About Me</h3>
+          <p>
+            I am Aakash Barasiya, a motivated Full-Stack Developer from Bhopal, Madhya Pradesh, India. I specialize in building web applications using JavaScript, React.js, Node.js, PHP, and databases like MySQL and MongoDB. My experience spans developing end-to-end solutions such as job portals, weather apps, and hospital management systems, focusing on clean, scalable, and efficient code. Passionate about learning new technologies, I continuously explore frameworks, contribute to open-source projects, and enhance my UI/UX skills. Beyond coding, I enjoy playing cricket, photography, and staying engaged with tech communities through GitHub and LinkedIn
+          </p>
+          <p>
+            
+          </p>
+        </div>
 
-
-      <!-- About Description -->
-      <div class="about-description">
-        <h3>About Me</h3>
-        <p>
-          I am a motivated full-stack developer with a passion for building web applications that solve real-world problems. With a strong background in JavaScript, React, Node.js, and database management, I specialize in creating seamless user experiences. Always eager to learn and explore new technologies, I aim to deliver efficient, clean, and scalable code.
-        </p>
-        <p>
-          When I'm not coding, I enjoy exploring new frameworks, contributing to open-source projects, and improving my UI/UX design skills.
-        </p>
       </div>
+    </div>
+  </section>
 
+  <!-- ===== Resume Permission Modal ===== -->
+  <div id="resume-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Request Permission</h2>
+      <p>Do you want to request permission to download my resume?</p>
+      <button id="grant-permission" class="btn-grant">Yes, Request Access</button>
+      <button id="deny-permission" class="btn-deny">No, Cancel</button>
     </div>
   </div>
-</section>
 
-<!-- ===== Resume Permission Modal ===== -->
-<div id="resume-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Request Permission</h2>
-    <p>Do you want to request permission to download my resume?</p>
-    <button id="grant-permission" class="btn-grant">Yes, Allow Download</button>
-    <button id="deny-permission" class="btn-deny">No, Cancel</button>
-  </div>
-</div>
+  <!-- ===== JS for Resume Modal ===== -->
+  <script>
+    const resumeBtn = document.getElementById('resume-btn');
+    const modal = document.getElementById('resume-modal');
+    const closeBtn = document.querySelector('.modal .close');
+    const grantBtn = document.getElementById('grant-permission');
+    const denyBtn = document.getElementById('deny-permission');
 
-<!-- ===== JS for Modal ===== -->
-<script src="resume-modal.js"></script>
+    // Open modal on resume button click
+    resumeBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    // Close modal on 'x' click
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Close modal if clicked outside content
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Grant permission (alert + optional download)
+    grantBtn.addEventListener('click', () => {
+      alert('Permission requested! You will be contacted to download the resume.');
+      // Optional: direct download link
+      // window.open('Aakash_Barasiya_Resume.pdf', '_blank');
+      modal.style.display = 'none';
+    });
+
+    // Deny permission
+    denyBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>
 
 
 
