@@ -198,8 +198,9 @@
 <section id="certifications" class="certifications-section video-section">
   <!-- Background Video -->
   <video class="bg-video" autoplay muted loop>
-    <source src="126662-736705634.mp4" type="video/mp4">
-  </video>
+  <source src="/215500.mp4" type="video/mp4">
+</video>
+
 
   <!-- Overlay Content -->
   <div class="section-content">
@@ -208,14 +209,15 @@
       <p class="section-subtitle">Professional Achievements</p>
     </div>
 
+    <!-- Grid -->
     <div class="cert-grid">
-      <!-- Example Certification Card -->
+      <!-- 1st Row (4 Cards) -->
       <div class="cert-card">
         <img src="q.png" alt="Cybersecurity Essentials" class="cert-logo"/>
         <h3>Cybersecurity Essentials</h3>
         <p>Cisco Networking</p>
         <span>Tech Stack: Networking Basics, Security Fundamentals</span>
-        <a href="q.pdf" target="_blank" class="cert-btn">View Certificate</a>
+        <a href="q.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
 
       <div class="cert-card">
@@ -223,13 +225,55 @@
         <h3>CCNA: Introduction to Networks</h3>
         <p>Cisco Networking</p>
         <span>Tech Stack: Routing, Switching, Network Fundamentals</span>
-        <a href="w.pdf" target="_blank" class="cert-btn">View Certificate</a>
+        <a href="w.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
 
-      <!-- Add remaining certificates here in same format -->
+      <div class="cert-card">
+        <img src="e.png" alt="CCNA: Switching, Routing & Wireless Essentials" class="cert-logo"/>
+        <h3>CCNA: Switching, Routing & Wireless Essentials</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Wireless, Routing Protocols, Switching</span>
+        <a href="e.png" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <img src="r.png" alt="CCNA: Enterprise Networking & Security" class="cert-logo"/>
+        <h3>CCNA: Enterprise Networking & Security</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Enterprise Networks, Security Basics</span>
+        <a href="r.png" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <!-- 2nd Row (3 Cards, centered) -->
+      <div class="cert-card">
+        <img src="t.png" alt="Python Essentials 1" class="cert-logo"/>
+        <h3>Python Essentials 1</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Python Basics, Syntax, Data Types</span>
+        <a href="t.png" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <img src="y.png" alt="Python Essentials 2" class="cert-logo"/>
+        <h3>Python Essentials 2</h3>
+        <p>Cisco Networking</p>
+        <span>Tech Stack: Functions, Modules, File I/O</span>
+        <a href="y.png" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <img src="niit.png" alt="Networking Essentials" class="cert-logo"/>
+        <h3>Networking Essentials</h3>
+        <p>Niit Foundation</p>
+        <span>Tech Stack: Networking Concepts, Protocols</span>
+        <a href="niitfu.jpeg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
     </div>
   </div>
 </section>
+
+
+
 
 
 
@@ -444,10 +488,8 @@
 
 
 
-
 <!-- ===== About Section ===== -->
 <section id="about" class="about-section">
-  <!-- Background Video (Optional) -->
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="/36471-410610193.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -474,8 +516,16 @@
         </div>
 
         <!-- Resume Button -->
-        <a href="Aakash_Barasiya_Resume.pdf" target="_blank" class="btn-resume">📄 Download Resume</a>
-      </div>
+<div class="about-buttons" style="margin-top: 20px; text-align: center;">
+  <a href="https://drive.google.com/file/d/1ypYdOfCVK2Xx1skmAJp74tPj8JyFN52R/view?usp=drive_link" 
+     target="_blank" 
+     class="btn-resume" 
+     title="Click to request access to resume">
+     📄 Download Resume
+  </a>
+  <p class="resume-note">*You need to request access to view this resume*</p>
+</div>
+
 
       <!-- About Description -->
       <div class="about-description">
@@ -491,6 +541,21 @@
     </div>
   </div>
 </section>
+
+<!-- ===== Resume Permission Modal ===== -->
+<div id="resume-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Request Permission</h2>
+    <p>Do you want to request permission to download my resume?</p>
+    <button id="grant-permission" class="btn-grant">Yes, Allow Download</button>
+    <button id="deny-permission" class="btn-deny">No, Cancel</button>
+  </div>
+</div>
+
+<!-- ===== JS for Modal ===== -->
+<script src="resume-modal.js"></script>
+
 
 
 

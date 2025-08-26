@@ -11,6 +11,7 @@
   color: #fff;
   overflow: hidden;
   background: #0d0d0d;
+  font-size: 1.1rem; /* Increased base font size */
 }
 
 .contact-section .bg-video {
@@ -40,7 +41,7 @@
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 25px;
-  padding: 40px 30px;
+  padding: 50px 40px; /* Increased padding */
   box-shadow: 0 15px 40px rgba(0, 245, 255, 0.2);
   flex: 1 1 320px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -53,16 +54,16 @@
 
 /* Info Card Styling */
 .contact-info h2 {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Increased heading size */
   color: #00f5ff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
 .contact-info p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 10px;
+  font-size: 1.2rem; /* Increased paragraph size */
+  line-height: 2;
+  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -70,6 +71,7 @@
   color: #00f5ff;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 1.2rem;
 }
 
 .contact-info a:hover {
@@ -79,21 +81,21 @@
 
 /* Contact Form Styling */
 .contact-form h2 {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Increased heading size */
   color: #00f5ff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
 .contact-form input, 
 .contact-form textarea {
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
+  padding: 15px 18px; /* Increased padding */
+  margin-bottom: 18px;
   border-radius: 12px;
   border: none;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Increased font size */
   background: rgba(255,255,255,0.1);
   color: #fff;
   transition: all 0.3s ease;
@@ -102,11 +104,11 @@
 .contact-form input:focus, 
 .contact-form textarea:focus {
   background: rgba(0,245,255,0.1);
-  box-shadow: 0 0 10px #00f5ff;
+  box-shadow: 0 0 12px #00f5ff; /* Slightly bigger glow */
 }
 
 .contact-form button {
-  padding: 12px 25px;
+  padding: 15px 28px; /* Increased button padding */
   border: none;
   border-radius: 12px;
   background: #00f5ff;
@@ -114,7 +116,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%; /* mobile friendly full button */
+  font-size: 1.2rem; /* Increased button font */
+  width: 100%;
 }
 
 .contact-form button:hover {
@@ -125,8 +128,8 @@
 
 /* Local Thank You Message */
 #local-thank-you {
-  font-size: 1rem;
-  margin-top: 15px;
+  font-size: 1.2rem; /* Increased thank you message font */
+  margin-top: 18px;
   color: limegreen;
   text-align: center;
 }
@@ -145,24 +148,29 @@
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 40px 10px;
+    padding: 50px 15px;
   }
 
   .contact-info, .contact-form {
-    padding: 25px 20px;
+    padding: 30px 25px;
     border-radius: 18px;
   }
 
   .contact-form h2, .contact-info h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .contact-info p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
 
   .contact-form input, .contact-form textarea {
-    font-size: 0.9rem;
-    padding: 10px 12px;
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+
+  .contact-form button {
+    font-size: 1.1rem;
+    padding: 12px 18px;
   }
 }
