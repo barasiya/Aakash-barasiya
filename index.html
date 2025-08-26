@@ -40,9 +40,9 @@
     </ul>
 
     <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
-    </div>
+    </button>
 
     <!-- Mobile Menu -->
     <ul class="nav-links-mobile" id="mobileMenu">
@@ -59,17 +59,17 @@
 
 <!-- ===== Social Icons ===== -->
 <ul class="social-icons-right">
-  <li><a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-  <li><a href="https://github.com/barasiya" target="_blank"><i class="fab fa-github"></i></a></li>
-  <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-  <li><a href="https://discord.com/" target="_blank"><i class="fab fa-discord"></i></a></li>
-  <li><a href="https://www.instagram.com/akash_12sia_02" target="_blank"><i class="fab fa-instagram"></i></a></li>
-  <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="https://github.com/barasiya" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+  <li><a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+  <li><a href="https://discord.com/" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a></li>
+  <li><a href="https://www.instagram.com/akash_12sia_02" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+  <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
 </ul>
 
 <!-- ===== Hero Section ===== -->
 <section id="home" class="hero">
-  <video class="bg-video" autoplay muted loop>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
     <source src="/126662-736705634.mp4" type="video/mp4">
   </video>
   <div class="hero-content">
@@ -80,12 +80,12 @@
       <h2 class="typing-mobile"></h2>
     </div>
   </div>
-  <div class="scroll-down"><span></span><span></span><span></span></div>
+  <div class="scroll-down" aria-hidden="true"><span></span><span></span><span></span></div>
 </section>
 
 <!-- ===== Scripts ===== -->
 <script>
-  // ===== Typed.js Animation =====
+  // Typed.js Animation
   new Typed('.typing', {
     strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
     typeSpeed: 60,
@@ -93,7 +93,6 @@
     backDelay: 1000,
     loop: true
   });
-
   new Typed('.typing-mobile', {
     strings: ['Full Stack Developer', 'MERN Stack', 'React.js Developer'],
     typeSpeed: 60,
@@ -102,26 +101,31 @@
     loop: true
   });
 
-  // ===== Hamburger Toggle =====
+  // Hamburger Toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active'); // hamburger animation
-    mobileMenu.classList.toggle('open');  // show/hide mobile menu
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
   });
-
-  // ===== Close mobile menu on link click =====
   document.querySelectorAll('.nav-links-mobile a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
 
 
 
@@ -139,21 +143,15 @@
 
 <!-- ===== Education Section ===== -->
 <section id="education" class="education-section">
-  <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
     <source src="/215500.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
-
-  <!-- Overlay Content -->
   <div class="section-content">
     <div class="education-heading-card">
       <h1 class="section-title">🎓 Education</h1>
       <p class="section-subtitle">Academic Background</p>
     </div>
-
     <div class="education-container">
-      <!-- College Card -->
       <div class="education-card">
         <img src="sistec.jpeg" alt="SISTec Logo" class="edu-logo">
         <h3>B.Tech in Computer Science</h3>
@@ -162,8 +160,6 @@
         <p>Core Subjects: DSA, DBMS, OS, AI, etc.</p>
         <a href="#" class="btn">View Certificate</a>
       </div>
-
-      <!-- Diploma Card -->
       <div class="education-card">
         <img src="polytechnic.jpeg" alt="Diploma Logo" class="edu-logo">
         <h3>Diploma in IT</h3>
@@ -194,78 +190,78 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ===== Certifications Section ===== -->
-<section id="certifications" class="certifications-section video-section">
-  <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop>
-  <source src="/215500.mp4" type="video/mp4">
-</video>
-
-
-  <!-- Overlay Content -->
+<section id="certifications" class="certifications-section">
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
+    <source src="/215500.mp4" type="video/mp4">
+  </video>
   <div class="section-content">
     <div class="certifications-heading-card">
       <h1 class="section-title">📜 Certifications</h1>
       <p class="section-subtitle">Professional Achievements</p>
     </div>
-
-    <!-- Grid -->
     <div class="cert-grid">
-      <!-- 1st Row (4 Cards) -->
+      <!-- Cards -->
       <div class="cert-card">
         <img src="q.png" alt="Cybersecurity Essentials" class="cert-logo"/>
         <h3>Cybersecurity Essentials</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Networking Basics, Security Fundamentals</span>
+        <span>Networking Basics, Security Fundamentals</span>
         <a href="q.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
       <div class="cert-card">
         <img src="w.png" alt="CCNA: Introduction to Networks" class="cert-logo"/>
         <h3>CCNA: Introduction to Networks</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Routing, Switching, Network Fundamentals</span>
+        <span>Routing, Switching, Network Fundamentals</span>
         <a href="w.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
       <div class="cert-card">
         <img src="e.png" alt="CCNA: Switching, Routing & Wireless Essentials" class="cert-logo"/>
         <h3>CCNA: Switching, Routing & Wireless Essentials</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Wireless, Routing Protocols, Switching</span>
+        <span>Wireless, Routing Protocols, Switching</span>
         <a href="e.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
       <div class="cert-card">
         <img src="r.png" alt="CCNA: Enterprise Networking & Security" class="cert-logo"/>
         <h3>CCNA: Enterprise Networking & Security</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Enterprise Networks, Security Basics</span>
+        <span>Enterprise Networks, Security Basics</span>
         <a href="r.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
-      <!-- 2nd Row (3 Cards, centered) -->
       <div class="cert-card">
         <img src="t.png" alt="Python Essentials 1" class="cert-logo"/>
         <h3>Python Essentials 1</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Python Basics, Syntax, Data Types</span>
+        <span>Python Basics, Syntax, Data Types</span>
         <a href="t.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
       <div class="cert-card">
         <img src="y.png" alt="Python Essentials 2" class="cert-logo"/>
         <h3>Python Essentials 2</h3>
         <p>Cisco Networking</p>
-        <span>Tech Stack: Functions, Modules, File I/O</span>
+        <span>Functions, Modules, File I/O</span>
         <a href="y.png" target="_blank" class="cert-btn">View Certificate</a>
       </div>
-
       <div class="cert-card">
         <img src="niit.png" alt="Networking Essentials" class="cert-logo"/>
         <h3>Networking Essentials</h3>
         <p>Niit Foundation</p>
-        <span>Tech Stack: Networking Concepts, Protocols</span>
+        <span>Networking Concepts, Protocols</span>
         <a href="niitfu.jpeg" target="_blank" class="cert-btn">View Certificate</a>
       </div>
     </div>
@@ -291,24 +287,22 @@
 
 
 
+
+
+
+
 <!-- ===== Skills Section ===== -->
 <section id="skills" class="skills-section">
-  <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
     <source src="/10822-226624975.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
-
-  <!-- Overlay Content -->
   <div class="section-content">
     <div class="education-heading-card">
       <h1 class="section-title">💻 My Programming Skills</h1>
       <p class="section-subtitle">Technical & Professional Skills</p>
     </div>
 
-    <!-- Programming Skills (3D Cards) -->
     <div class="skills-category-block">
-      <!-- Front-End -->
       <h4 class="skill-category">Front-End</h4>
       <div class="skills-grid">
         <div class="skill-card"><img src="https://img.icons8.com/color/96/html-5--v1.png"/><p>HTML5</p></div>
@@ -317,7 +311,6 @@
         <div class="skill-card"><img src="https://img.icons8.com/color/96/react-native.png"/><p>React</p></div>
       </div>
 
-      <!-- Back-End -->
       <h4 class="skill-category">Back-End</h4>
       <div class="skills-grid">
         <div class="skill-card"><img src="https://img.icons8.com/color/96/nodejs.png"/><p>Node.js</p></div>
@@ -327,7 +320,6 @@
         <div class="skill-card"><img src="https://img.icons8.com/color/96/express-js.png"/><p>Express.js</p></div>
       </div>
 
-      <!-- Databases & OS -->
       <h4 class="skill-category">Databases & OS</h4>
       <div class="skills-grid">
         <div class="skill-card"><img src="https://img.icons8.com/ios-filled/100/mysql-logo.png"/><p>MySQL</p></div>
@@ -335,7 +327,6 @@
         <div class="skill-card"><img src="https://img.icons8.com/color/96/linux.png"/><p>Linux</p></div>
       </div>
 
-      <!-- Tools -->
       <h4 class="skill-category">Tools</h4>
       <div class="skills-grid">
         <div class="skill-card"><img src="https://img.icons8.com/color/96/git.png"/><p>Git</p></div>
@@ -343,8 +334,6 @@
         <div class="skill-card"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png"/><p>VS Code</p></div>
       </div>
     </div>
-
-   
   </div>
 </section>
 
@@ -487,7 +476,7 @@
 
 
 
-  <!-- ===== About Section ===== -->
+<!-- ===== About Section ===== -->
   <section id="about" class="about-section">
     <!-- Background Video -->
     <video class="bg-video" autoplay muted loop playsinline>
@@ -528,7 +517,10 @@
         <div class="about-description">
           <h3>About Me</h3>
           <p>
-            I am Aakash Barasiya, a motivated Full-Stack Developer from Bhopal, Madhya Pradesh, India. I specialize in building web applications using JavaScript, React.js, Node.js, PHP, and databases like MySQL and MongoDB. My experience spans developing end-to-end solutions such as job portals, weather apps, and hospital management systems, focusing on clean, scalable, and efficient code. Passionate about learning new technologies, I continuously explore frameworks, contribute to open-source projects, and enhance my UI/UX skills. Beyond coding, I enjoy playing cricket, photography, and staying engaged with tech communities through GitHub and LinkedIn.
+            I am Aakash Barasiya, a motivated Full-Stack Developer from Bhopal, Madhya Pradesh, India. I specialize in building web applications using JavaScript, React.js, Node.js, PHP, and databases like MySQL and MongoDB. My experience spans developing end-to-end solutions such as job portals, weather apps, and hospital management systems, focusing on clean, scalable, and efficient code. Passionate about learning new technologies, I continuously explore frameworks, contribute to open-source projects, and enhance my UI/UX skills. Beyond coding, I enjoy playing cricket, photography, and staying engaged with tech communities through GitHub and LinkedIn
+          </p>
+          <p>
+            
           </p>
         </div>
 
@@ -541,73 +533,43 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Request Permission</h2>
-      <p>Enter your email to request access to download the resume:</p>
-      <input type="email" id="visitor-email" placeholder="Your email">
-      <p id="request-message"></p>
-      <div class="modal-buttons">
-        <button id="send-request" class="btn-send">Send Request</button>
-        <button id="deny-permission" class="btn-deny">Cancel</button>
-      </div>
+      <p>Do you want to request permission to download my resume?</p>
+      <button id="grant-permission" class="btn-grant">Yes, Request Access</button>
+      <button id="deny-permission" class="btn-deny">No, Cancel</button>
     </div>
   </div>
 
-  <!-- ===== JS ===== -->
+  <!-- ===== JS for Resume Modal ===== -->
   <script>
-    // ===== Modal Elements =====
     const resumeBtn = document.getElementById('resume-btn');
     const modal = document.getElementById('resume-modal');
-    const closeBtn = modal.querySelector('.close');
-    const sendBtn = document.getElementById('send-request');
+    const closeBtn = document.querySelector('.modal .close');
+    const grantBtn = document.getElementById('grant-permission');
     const denyBtn = document.getElementById('deny-permission');
-    const emailInput = document.getElementById('visitor-email');
-    const message = document.getElementById('request-message');
 
-    // ===== Open Modal =====
+    // Open modal on resume button click
     resumeBtn.addEventListener('click', () => {
       modal.style.display = 'block';
-      emailInput.value = '';
-      message.textContent = '';
-      emailInput.focus();
     });
 
-    // ===== Close Modal =====
+    // Close modal on 'x' click
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
 
-    // Close modal on outside click
+    // Close modal if clicked outside content
     window.addEventListener('click', (e) => {
       if (e.target == modal) {
         modal.style.display = 'none';
       }
     });
 
-    // ===== Send Request =====
-    sendBtn.addEventListener('click', () => {
-      const email = emailInput.value.trim();
-
-      if (email === '') {
-        message.style.color = 'red';
-        message.textContent = 'Please enter your email.';
-        return;
-      }
-
-      // Validate email format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        message.style.color = 'red';
-        message.textContent = 'Please enter a valid email.';
-        return;
-      }
-
-      // Placeholder for sending request (EmailJS/backend can be integrated here)
-      message.style.color = '#00f5ff';
-      message.textContent = `Request sent! We will contact you at ${email}.`;
-
-      // Auto-close modal after 3 seconds
-      setTimeout(() => {
-        modal.style.display = 'none';
-      }, 3000);
+    // Grant permission (alert + optional download)
+    grantBtn.addEventListener('click', () => {
+      alert('Permission requested! You will be contacted to download the resume.');
+      // Optional: direct download link
+      // window.open('Aakash_Barasiya_Resume.pdf', '_blank');
+      modal.style.display = 'none';
     });
 
     // Deny permission
@@ -630,9 +592,79 @@
 
 
 
+<!-- ===== Contact Section ===== -->
+<section id="contact" class="contact-section" style="position: relative; overflow: hidden;">
+
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop playsinline style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; filter: brightness(0.4);">
+    <source src="/1110-142930245.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="section-content" style="position: relative; z-index: 2; padding: 80px 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1200px; margin: auto;">
+
+    <!-- Contact Info -->
+    <div class="contact-info" style="flex: 1; min-width: 280px; color: #fff;">
+      <h2>Contact Me</h2>
+      <p>I would love to hear from you – whether it's feedback, opportunities or questions.</p>
+      <p>📍 India</p>
+      <p>✉️ <a href="mailto:aakashbarasiya2001@gmail.com" style="color:#00f5ff;">aakashbarasiya2001@gmail.com</a></p>
+      <p>📞 <a href="tel:+919575133239" style="color:#00f5ff;">+91 95751 33239</a></p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form" style="flex: 1; min-width: 320px;">
+      <h2>Leave A Message</h2>
+
+      <form id="custom-contact-form" action="https://formsubmit.co/aakashbarasiya2001@gmail.com" method="POST" target="invisible_iframe">
+        <!-- FormSubmit Hidden Fields -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- Form Fields -->
+        <input type="text" name="First Name" placeholder="First Name" required>
+        <input type="text" name="Last Name" placeholder="Last Name (optional)">
+        <input type="email" name="Email" placeholder="Email" required>
+        <input type="text" name="Phone" placeholder="Phone (optional)">
+        <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Local Thank You Message -->
+      <div id="local-thank-you" style="display: none; color: limegreen; margin-top: 15px;">
+        ✅ Thank you! Your message has been sent.
+      </div>
+
+      <!-- Hidden iframe -->
+      <iframe name="invisible_iframe" style="display: none;"></iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript for Local Thank You -->
+<script>
+document.getElementById("custom-contact-form").addEventListener("submit", function(){
+    document.getElementById("local-thank-you").style.display = "block";
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ==== FOOTER SECTION ==== -->
 <footer class="site-footer" role="contentinfo">
+
   <!-- Social Links -->
   <div class="footer-social" aria-label="Social Media Links">
     <a href="https://github.com/barasiya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -655,4 +687,32 @@
 
   <!-- Footer Credit -->
   <p class="footer-credit">© 2025 | Made by <strong>Aakash Barasiya</strong></p>
+
+  <!-- Typed.js Animated Text at the bottom -->
+  <p class="footer-typed">
+    <span id="typed-footer"></span>
+  </p>
+
 </footer>
+
+<!-- Typed.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- Typed.js Initialization -->
+<script>
+const typed = new Typed('#typed-footer', {
+  strings: [
+    "<span class='text1'>Thank you for visiting 💖</span>",
+    "<span class='text2'>Love your code!</span>",
+    "<span class='text3'>Download my resume</span>",
+    "<span class='text4'>Check out my projects!</span>"
+  ],
+  typeSpeed: 50,
+  backSpeed: 30,
+  startDelay: 500,
+  showCursor: true,
+  cursorChar: "|",
+  loop: true,
+  smartBackspace: true
+});
+</script>
