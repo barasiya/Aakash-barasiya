@@ -487,7 +487,7 @@
 
 
 
-<!-- ===== About Section ===== -->
+  <!-- ===== About Section ===== -->
   <section id="about" class="about-section">
     <!-- Background Video -->
     <video class="bg-video" autoplay muted loop playsinline>
@@ -528,10 +528,7 @@
         <div class="about-description">
           <h3>About Me</h3>
           <p>
-            I am Aakash Barasiya, a motivated Full-Stack Developer from Bhopal, Madhya Pradesh, India. I specialize in building web applications using JavaScript, React.js, Node.js, PHP, and databases like MySQL and MongoDB. My experience spans developing end-to-end solutions such as job portals, weather apps, and hospital management systems, focusing on clean, scalable, and efficient code. Passionate about learning new technologies, I continuously explore frameworks, contribute to open-source projects, and enhance my UI/UX skills. Beyond coding, I enjoy playing cricket, photography, and staying engaged with tech communities through GitHub and LinkedIn
-          </p>
-          <p>
-            
+            I am Aakash Barasiya, a motivated Full-Stack Developer from Bhopal, Madhya Pradesh, India. I specialize in building web applications using JavaScript, React.js, Node.js, PHP, and databases like MySQL and MongoDB. My experience spans developing end-to-end solutions such as job portals, weather apps, and hospital management systems, focusing on clean, scalable, and efficient code. Passionate about learning new technologies, I continuously explore frameworks, contribute to open-source projects, and enhance my UI/UX skills. Beyond coding, I enjoy playing cricket, photography, and staying engaged with tech communities through GitHub and LinkedIn.
           </p>
         </div>
 
@@ -544,43 +541,73 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Request Permission</h2>
-      <p>Do you want to request permission to download my resume?</p>
-      <button id="grant-permission" class="btn-grant">Yes, Request Access</button>
-      <button id="deny-permission" class="btn-deny">No, Cancel</button>
+      <p>Enter your email to request access to download the resume:</p>
+      <input type="email" id="visitor-email" placeholder="Your email">
+      <p id="request-message"></p>
+      <div class="modal-buttons">
+        <button id="send-request" class="btn-send">Send Request</button>
+        <button id="deny-permission" class="btn-deny">Cancel</button>
+      </div>
     </div>
   </div>
 
-  <!-- ===== JS for Resume Modal ===== -->
+  <!-- ===== JS ===== -->
   <script>
+    // ===== Modal Elements =====
     const resumeBtn = document.getElementById('resume-btn');
     const modal = document.getElementById('resume-modal');
-    const closeBtn = document.querySelector('.modal .close');
-    const grantBtn = document.getElementById('grant-permission');
+    const closeBtn = modal.querySelector('.close');
+    const sendBtn = document.getElementById('send-request');
     const denyBtn = document.getElementById('deny-permission');
+    const emailInput = document.getElementById('visitor-email');
+    const message = document.getElementById('request-message');
 
-    // Open modal on resume button click
+    // ===== Open Modal =====
     resumeBtn.addEventListener('click', () => {
       modal.style.display = 'block';
+      emailInput.value = '';
+      message.textContent = '';
+      emailInput.focus();
     });
 
-    // Close modal on 'x' click
+    // ===== Close Modal =====
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
 
-    // Close modal if clicked outside content
+    // Close modal on outside click
     window.addEventListener('click', (e) => {
       if (e.target == modal) {
         modal.style.display = 'none';
       }
     });
 
-    // Grant permission (alert + optional download)
-    grantBtn.addEventListener('click', () => {
-      alert('Permission requested! You will be contacted to download the resume.');
-      // Optional: direct download link
-      // window.open('Aakash_Barasiya_Resume.pdf', '_blank');
-      modal.style.display = 'none';
+    // ===== Send Request =====
+    sendBtn.addEventListener('click', () => {
+      const email = emailInput.value.trim();
+
+      if (email === '') {
+        message.style.color = 'red';
+        message.textContent = 'Please enter your email.';
+        return;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        message.style.color = 'red';
+        message.textContent = 'Please enter a valid email.';
+        return;
+      }
+
+      // Placeholder for sending request (EmailJS/backend can be integrated here)
+      message.style.color = '#00f5ff';
+      message.textContent = `Request sent! We will contact you at ${email}.`;
+
+      // Auto-close modal after 3 seconds
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 3000);
     });
 
     // Deny permission
@@ -590,77 +617,6 @@
   </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ===== Contact Section ===== -->
-<section id="contact" class="contact-section" style="position: relative; overflow: hidden;">
-
-  <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; filter: brightness(0.4);">
-    <source src="/1110-142930245.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay Content -->
-  <div class="section-content" style="position: relative; z-index: 2; padding: 80px 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1200px; margin: auto;">
-
-    <!-- Contact Info -->
-    <div class="contact-info" style="flex: 1; min-width: 280px; color: #fff;">
-      <h2>Contact Me</h2>
-      <p>I would love to hear from you – whether it's feedback, opportunities or questions.</p>
-      <p>📍 India</p>
-      <p>✉️ <a href="mailto:aakashbarasiya2001@gmail.com" style="color:#00f5ff;">aakashbarasiya2001@gmail.com</a></p>
-      <p>📞 <a href="tel:+919575133239" style="color:#00f5ff;">+91 95751 33239</a></p>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form" style="flex: 1; min-width: 320px;">
-      <h2>Leave A Message</h2>
-
-      <form id="custom-contact-form" action="https://formsubmit.co/aakashbarasiya2001@gmail.com" method="POST" target="invisible_iframe">
-        <!-- FormSubmit Hidden Fields -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <!-- Form Fields -->
-        <input type="text" name="First Name" placeholder="First Name" required>
-        <input type="text" name="Last Name" placeholder="Last Name (optional)">
-        <input type="email" name="Email" placeholder="Email" required>
-        <input type="text" name="Phone" placeholder="Phone (optional)">
-        <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-
-      <!-- Local Thank You Message -->
-      <div id="local-thank-you" style="display: none; color: limegreen; margin-top: 15px;">
-        ✅ Thank you! Your message has been sent.
-      </div>
-
-      <!-- Hidden iframe -->
-      <iframe name="invisible_iframe" style="display: none;"></iframe>
-    </div>
-
-  </div>
-</section>
-
-<!-- JavaScript for Local Thank You -->
-<script>
-document.getElementById("custom-contact-form").addEventListener("submit", function(){
-    document.getElementById("local-thank-you").style.display = "block";
-});
-</script>
 
 
 
