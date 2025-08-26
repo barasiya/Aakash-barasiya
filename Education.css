@@ -25,12 +25,15 @@ body {
 .education-section {
   position: relative;
   width: 100%;
-  min-height: 80vh;    /* कम किया height */
-  padding: 80px 30px;  /* कम किया padding */
+  min-height: 90vh; /* Adjusted for better visibility on laptops */
+  padding: 120px 30px;
   color: #fff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* Background Video */
 .education-section .bg-video {
@@ -41,13 +44,14 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1; /* behind content */
-  filter: brightness(0.3); /* darken for text visibility */
+  filter: brightness(0.3);
 }
 
 /* Content Wrapper */
 .education-section .section-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -76,10 +80,11 @@ body {
 /* Education Cards Container */
 .education-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
   justify-content: center;
   align-items: stretch;
+  width: 100%;
 }
 
 /* Individual Card */
@@ -158,22 +163,32 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .education-heading-card .section-title { font-size: 2.8rem; }
+}
+
 @media (max-width: 1024px) {
   .education-heading-card .section-title { font-size: 2.5rem; }
+  .education-heading-card .section-subtitle { font-size: 1.2rem; }
+  .education-container { gap: 30px; }
 }
 
 @media (max-width: 768px) {
   .education-section {
     padding: 100px 20px;
   }
-
   .education-heading-card .section-title { font-size: 2.2rem; }
   .education-heading-card .section-subtitle { font-size: 1.1rem; }
-
   .education-container { gap: 25px; }
+  .education-card { padding: 28px 20px; }
+}
 
-  .education-card {
-    padding: 28px 20px;
-  }
+@media (max-width: 480px) {
+  .education-heading-card .section-title { font-size: 1.8rem; }
+  .education-heading-card .section-subtitle { font-size: 1rem; }
+  .education-card h3 { font-size: 1.2rem; }
+  .education-card h4 { font-size: 0.95rem; }
+  .education-card p { font-size: 0.9rem; }
+  .education-card .btn { font-size: 0.9rem; padding: 8px 18px; }
 }
