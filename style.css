@@ -43,7 +43,7 @@ body {
   padding: 12px 28px;
 }
 
-/* ===== Hamburger Button (Left Aligned) ===== */
+/* ===== Hamburger Button ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -55,7 +55,7 @@ body {
   cursor: pointer;
   z-index: 1001;
   position: absolute;
-  left: 20px; /* Force left */
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
@@ -79,6 +79,7 @@ body {
   transform: translate(-50%, -50%);
   transition: width 0.4s ease, height 0.4s ease;
 }
+
 .hamburger:active::after {
   width: 120px;
   height: 120px;
@@ -147,7 +148,7 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== Mobile Menu (Left Side) ===== */
+/* ===== Mobile Menu ===== */
 .nav-links-mobile {
   position: fixed;
   top: 70px;
