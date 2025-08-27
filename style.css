@@ -91,8 +91,34 @@ body {
   border: none;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Glow effect */
+.hamburger:hover span {
+  box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+}
+
+/* Ripple animation */
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(0, 245, 255, 0.3);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+.hamburger:active::after {
+  width: 120px;
+  height: 120px;
+}
+
+/* Hamburger lines */
 .hamburger span {
   display: block;
   height: 3px;
@@ -102,6 +128,12 @@ body {
   transition: all 0.35s ease;
 }
 
+/* Scale effect on click */
+.hamburger:active {
+  transform: scale(0.9);
+}
+
+/* Active (cross icon) */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -115,8 +147,8 @@ body {
 /* ===== Mobile Menu ===== */
 .nav-links-mobile {
   position: fixed;
-  top: 70px; /* navbar ke niche open hoga */
-  height: auto; /* full screen nahi lega */
+  top: 70px;
+  height: auto;
   width: 70%;
   max-width: 280px;
   background: rgba(13, 13, 13, 0.98);
@@ -135,21 +167,17 @@ body {
   pointer-events: none;
 }
 
-/* Default Hidden */
 .nav-links-mobile.open {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Right Slide */
 .navbar.right .nav-links-mobile {
   right: -100%;
 }
 .navbar.right .nav-links-mobile.open {
   right: 0;
 }
-
-/* Left Slide */
 .navbar.left .nav-links-mobile {
   left: -100%;
 }
