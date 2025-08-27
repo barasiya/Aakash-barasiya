@@ -115,43 +115,50 @@ body {
 /* ===== Mobile Menu ===== */
 .nav-links-mobile {
   position: fixed;
-  top: 0;
-  height: 100vh;
+  top: 70px; /* navbar ke niche open hoga */
+  height: auto; /* full screen nahi lega */
   width: 70%;
-  max-width: 300px;
+  max-width: 280px;
   background: rgba(13, 13, 13, 0.98);
   backdrop-filter: blur(14px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 30px;
+  padding: 25px 0;
+  gap: 25px;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Default (Right Hamburger → Open from Right) */
+/* Default Hidden */
+.nav-links-mobile.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Right Slide */
 .navbar.right .nav-links-mobile {
   right: -100%;
 }
 .navbar.right .nav-links-mobile.open {
   right: 0;
-  box-shadow: -3px 0 12px rgba(0, 0, 0, 0.6);
 }
 
-/* Left Hamburger → Open from Left */
+/* Left Slide */
 .navbar.left .nav-links-mobile {
   left: -100%;
 }
 .navbar.left .nav-links-mobile.open {
   left: 0;
-  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.6);
 }
 
 .nav-links-mobile li a {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
