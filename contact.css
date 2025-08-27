@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 60px 15px; /* Mobile friendly padding */
+  padding: 60px 15px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,8 @@
   color: #fff;
   overflow: hidden;
   background: #0d0d0d;
-  font-size: 1.1rem; /* Increased base font size */
+  font-size: 1.1rem;
+  z-index: 1;
 }
 
 .contact-section .bg-video {
@@ -22,7 +23,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.2; /* low opacity for mobile visibility */
   filter: brightness(0.4);
 }
 
@@ -37,11 +38,12 @@
   width: 100%;
 }
 
+/* ===== Info & Form Boxes ===== */
 .contact-info, .contact-form {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 25px;
-  padding: 50px 40px; /* Increased padding */
+  padding: 50px 40px;
   box-shadow: 0 15px 40px rgba(0, 245, 255, 0.2);
   flex: 1 1 320px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -54,14 +56,14 @@
 
 /* Info Card Styling */
 .contact-info h2 {
-  font-size: 2.5rem; /* Increased heading size */
+  font-size: 2.5rem;
   color: #00f5ff;
   margin-bottom: 25px;
   text-align: center;
 }
 
 .contact-info p {
-  font-size: 1.2rem; /* Increased paragraph size */
+  font-size: 1.2rem;
   line-height: 2;
   margin-bottom: 12px;
   text-align: center;
@@ -81,7 +83,7 @@
 
 /* Contact Form Styling */
 .contact-form h2 {
-  font-size: 2.5rem; /* Increased heading size */
+  font-size: 2.5rem;
   color: #00f5ff;
   margin-bottom: 25px;
   text-align: center;
@@ -90,12 +92,12 @@
 .contact-form input, 
 .contact-form textarea {
   width: 100%;
-  padding: 15px 18px; /* Increased padding */
+  padding: 15px 18px;
   margin-bottom: 18px;
   border-radius: 12px;
   border: none;
   outline: none;
-  font-size: 1.1rem; /* Increased font size */
+  font-size: 1.1rem;
   background: rgba(255,255,255,0.1);
   color: #fff;
   transition: all 0.3s ease;
@@ -104,11 +106,11 @@
 .contact-form input:focus, 
 .contact-form textarea:focus {
   background: rgba(0,245,255,0.1);
-  box-shadow: 0 0 12px #00f5ff; /* Slightly bigger glow */
+  box-shadow: 0 0 12px #00f5ff;
 }
 
 .contact-form button {
-  padding: 15px 28px; /* Increased button padding */
+  padding: 15px 28px;
   border: none;
   border-radius: 12px;
   background: #00f5ff;
@@ -116,7 +118,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.2rem; /* Increased button font */
+  font-size: 1.2rem;
   width: 100%;
 }
 
@@ -128,13 +130,13 @@
 
 /* Local Thank You Message */
 #local-thank-you {
-  font-size: 1.2rem; /* Increased thank you message font */
+  font-size: 1.2rem;
   margin-top: 18px;
   color: limegreen;
   text-align: center;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .contact-section .section-content {
     flex-direction: column;
@@ -172,5 +174,10 @@
   .contact-form button {
     font-size: 1.1rem;
     padding: 12px 18px;
+  }
+
+  /* Make sure video stays behind content */
+  .contact-section .bg-video {
+    opacity: 0.15;
   }
 }
