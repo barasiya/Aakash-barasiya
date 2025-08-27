@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- CSS Files -->
@@ -29,6 +29,7 @@
 <!-- ===== Navbar ===== -->
 <header>
   <nav class="navbar">
+    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#education">Education</a></li>
@@ -44,26 +45,26 @@
       <span></span><span></span><span></span>
     </button>
 
-    
-  <!-- ===== Mobile Menu ===== -->
-  <ul class="nav-links-mobile" id="mobileMenu">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    
-    <!-- Social Icons -->
-    <div class="menu-socials">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </ul>
+    <!-- Mobile Menu -->
+    <ul class="nav-links-mobile" id="mobileMenu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <!-- Social Icons in Menu -->
+      <div class="menu-socials">
+        <a href="https://github.com/barasiya" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </ul>
+  </nav>
 </header>
 
-<!-- ===== Social Icons ===== -->
+<!-- ===== Social Icons (Right Sidebar) ===== -->
 <ul class="social-icons-right">
   <li><a href="https://www.linkedin.com/in/aakash-barasiya-13173b215" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
   <li><a href="https://github.com/barasiya" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
@@ -115,14 +116,22 @@
     mobileMenu.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
   });
-  document.querySelectorAll('.nav-links-mobile a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('active');
+
+  // Active link highlight on click
+  const links = document.querySelectorAll(".nav-links li a, .nav-links-mobile li a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      links.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+      mobileMenu.classList.remove("open");
+      hamburger.classList.remove("active");
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
+
+</body>
+</html>
 
 
 
@@ -722,4 +731,34 @@ const typed = new Typed('#typed-footer', {
   smartBackspace: true
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
