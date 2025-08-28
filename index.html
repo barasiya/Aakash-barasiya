@@ -155,12 +155,11 @@
 
 
 
-
 <!-- ===== Education Section ===== -->
 <section id="education" class="education-section">
   <!-- Background Video -->
   <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
-    <source src="/183107-870151708_small.mp4" type="video/mp4">
+    <source src="183107-870151708_small.mp4" type="video/mp4">
   </video>
 
   <!-- Overlay -->
@@ -175,20 +174,19 @@
 
     <!-- Cards Container -->
     <div class="education-container">
-
-      <!-- B.Tech -->
+      <!-- Card 1 -->
       <div class="education-card">
-        <img src="/sistec.jpeg" alt="SISTec Logo" class="edu-logo">
+        <img src="sistec.jpeg" alt="SISTec Logo" class="edu-logo">
         <h3>B.Tech in Computer Science</h3>
         <h4>SISTec, Bhopal</h4>
-        <span>2022 – 2026</span>
+        <span>2023 – 2026</span>
         <p>Core Subjects: DSA, DBMS, OS, AI, etc.</p>
         <a href="#" class="btn">View Certificate</a>
       </div>
 
-      <!-- Diploma -->
+      <!-- Card 2 -->
       <div class="education-card">
-        <img src="/poly.jpeg" alt="Diploma Logo" class="edu-logo">
+        <img src="poly.jpeg" alt="Diploma Logo" class="edu-logo">
         <h3>Diploma in IT</h3>
         <h4>Govt. Polytechnic, Chhindwara</h4>
         <span>2019 – 2022</span>
@@ -196,29 +194,71 @@
         <a href="#" class="btn">View Certificate</a>
       </div>
 
-      <!-- 12th -->
+      <!-- Card 3 -->
       <div class="education-card">
-        <img src="/govt_hss_excellence_sausar_logo.jpg" alt="12th Logo" class="edu-logo">
+        <img src="govt_hss_excellence_sausar_logo.jpg" alt="12th Logo" class="edu-logo">
         <h3>Senior Secondary (12th)</h3>
-        <h4>XYZ Higher Secondary School</h4>
-        <span>2017 – 2019</span>
+        <h4>Govt. Excellence School Chhindwara</h4>
+        <span>2019</span>
         <p>Science Stream: Physics, Chemistry, Mathematics, Computer Science.</p>
         <a href="#" class="btn">View Certificate</a>
       </div>
 
-      <!-- 10th -->
+      <!-- Card 4 -->
       <div class="education-card">
-        <img src="/govt_hss_excellence_sausar_logo.jpg" alt="10th Logo" class="edu-logo">
+        <img src="govt_hss_excellence_sausar_logo.jpg" alt="10th Logo" class="edu-logo">
         <h3>Secondary (10th)</h3>
-        <h4>ABC High School</h4>
-        <span>2015 – 2017</span>
-        <p>Subjects: Science, Math, English, Social Studies.</p>
+        <h4>Govt. Excellence School Chhindwara</h4>
+        <span>2017</span>
+        <p>Subjects: Hindi, Science, Math, English, Social Science Sanskrit.</p>
         <a href="#" class="btn">View Certificate</a>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- ===== JS for Tilt, Button Animation & Fade In ===== -->
+<script>
+  const cards = document.querySelectorAll('.education-card');
+
+  // Tilt Effect
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+      card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.07)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  });
+
+  // Button Click Animation
+  const buttons = document.querySelectorAll('.education-card .btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('mousedown', () => btn.style.transform = 'scale(0.95)');
+    btn.addEventListener('mouseup', () => btn.style.transform = 'scale(1)');
+  });
+
+  // Fade In on Scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
 
 
 
@@ -675,48 +715,40 @@
 
 
 <!-- ===== Contact Section ===== -->
-<section id="contact" class="contact-section" style="position: relative; overflow: hidden;">
+<section id="contact" class="contact-section">
 
   <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline 
-         style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; filter: brightness(0.4);">
+  <video class="bg-video" autoplay muted loop playsinline>
     <source src="/1110-142930245.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <!-- Overlay Content -->
-  <div class="section-content" 
-       style="position: relative; z-index: 2; padding: 80px 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1200px; margin: auto;">
-
+  <div class="section-content">
     <!-- Contact Info -->
-    <div class="contact-info" style="flex: 1; min-width: 280px; color: #fff;">
+    <div class="contact-info">
       <h2>Contact Me</h2>
-      <p>I would love to hear from you – whether it's feedback, opportunities or questions.</p>
+      <p>I would love to hear from you – whether it's feedback, opportunities, or questions.</p>
       <p>📍 India</p>
-      <p>✉️ <a href="mailto:aakashbarasiya2001@gmail.com" style="color:#00f5ff;">aakashbarasiya2001@gmail.com</a></p>
-      <p>📞 <a href="tel:+919575133239" style="color:#00f5ff;">+91 95751 33239</a></p>
+      <p>✉️ <a href="mailto:aakashbarasiya2001@gmail.com">aakashbarasiya2001@gmail.com</a></p>
+      <p>📞 <a href="tel:+919575133239">+91 95751 33239</a></p>
 
       <!-- Download Resume Button -->
-      <div class="about-buttons" style="margin-top:20px; text-align:center;">
-        <a href="https://drive.google.com/file/d/1ypYdOfCVK2Xx1skmAJp74tPj8JyFN52R/view?usp=drive_link" 
-           target="_blank" 
-           class="btn" 
-           style="display:inline-block; padding:12px 20px; background:#00f5ff; color:#0d0d0d; border-radius:8px; text-decoration:none; font-weight:600; transition:0.3s;">
-           <i class="fas fa-download"></i> Download Resume
+      <div class="about-buttons">
+        <a href="https://drive.google.com/file/d/1ypYdOfCVK2Xx1skmAJp74tPj8JyFN52R/view?usp=drive_link" target="_blank" class="btn">
+          <i class="fas fa-download"></i> Download Resume
         </a>
       </div>
     </div>
 
     <!-- Contact Form -->
-    <div class="contact-form" style="flex: 1; min-width: 320px;">
+    <div class="contact-form">
       <h2>Leave A Message</h2>
 
       <form id="custom-contact-form" action="https://formsubmit.co/aakashbarasiya2001@gmail.com" method="POST" target="invisible_iframe" novalidate>
-        <!-- FormSubmit Hidden Fields -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <!-- Floating Label Fields -->
         <div class="form-group">
           <input type="text" name="First Name" id="firstName" placeholder=" " required>
           <label for="firstName">First Name *</label>
@@ -748,24 +780,172 @@
         <button type="submit">Send Message</button>
       </form>
 
-      <!-- Local Thank You Message -->
-      <div id="local-thank-you" style="display: none; color: limegreen; margin-top: 15px;">
-        ✅ Thank you! Your message has been sent.
-      </div>
-
-      <!-- Hidden iframe -->
-      <iframe name="invisible_iframe" style="display: none;"></iframe>
+      <div id="local-thank-you">✅ Thank you! Your message has been sent.</div>
+      <iframe name="invisible_iframe" style="display:none;"></iframe>
     </div>
-
   </div>
 </section>
 
-<!-- ===== JavaScript ===== -->
+<!-- ===== CSS ===== -->
+<style>
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  padding: 60px 20px;
+  background: #0d0d0d;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.4);
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2, .contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p a {
+  color: #00f5ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-info p a:hover { text-decoration: underline; }
+
+.about-buttons .btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #00f5ff;
+  color: #0d0d0d;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.about-buttons .btn:hover { background: #00c5ff; }
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #00f5ff;
+  background: rgba(0,0,0,0.5);
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.error-msg {
+  display: none;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #00f5ff;
+  color: #0d0d0d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button[type="submit"]:hover { background: #00c5ff; }
+
+#local-thank-you {
+  display: none;
+  color: limegreen;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Shake animation for invalid fields */
+.form-group.invalid {
+  animation: shake 0.3s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .section-content { flex-direction: column; align-items: center; }
+}
+</style>
+
+<!-- ===== JS ===== -->
 <script>
 const form = document.getElementById("custom-contact-form");
 const thankYouMsg = document.getElementById("local-thank-you");
 
-// Helper: Email regex
 function isValidEmail(email) {
   return /^\S+@\S+\.\S+$/.test(email);
 }
@@ -799,15 +979,11 @@ form.addEventListener("submit", function(e){
   form.querySelectorAll("input[required], textarea[required]").forEach(field => {
     const error = field.nextElementSibling.nextElementSibling || field.nextElementSibling;
 
-    // Validate required
     if(!field.value.trim() || (field.type === "email" && !isValidEmail(field.value.trim()))){
       valid = false;
       error.style.display = "block";
       field.parentElement.classList.add("invalid");
       if(!firstInvalid) firstInvalid = field.parentElement;
-      
-      // Shake animation
-      setTimeout(() => field.parentElement.classList.remove("invalid"), 500);
     } else {
       error.style.display = "none";
       field.parentElement.classList.remove("invalid");
@@ -820,7 +996,7 @@ form.addEventListener("submit", function(e){
     return false;
   }
 
-  // Show local thank you and auto-hide
+  // Show local thank you and reset form
   thankYouMsg.style.display = "block";
   setTimeout(() => {
     thankYouMsg.style.display = "none";
@@ -828,7 +1004,6 @@ form.addEventListener("submit", function(e){
   }, 5000);
 });
 </script>
-
 
 
 
