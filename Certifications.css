@@ -1,0 +1,177 @@
+/* ===== Certifications Section ===== */
+.certifications-section {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  background: transparent;
+}
+
+/* Video Background */
+.certifications-section .bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.4;
+}
+
+/* Dark Overlay */
+.certifications-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.55));
+  z-index: -1;
+}
+
+/* Section Content */
+.section-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.certifications-heading-card {
+  margin-bottom: 60px;
+}
+.certifications-heading-card .section-title {
+  font-size: 3rem;
+  color: #00f5ff;
+  font-weight: 700;
+  text-shadow: 0 0 15px #00f5ff88;
+  margin-bottom: 15px;
+}
+.certifications-heading-card .section-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+/* Grid: 2 columns for 2 rows layout */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+  gap: 40px;
+  justify-items: center;
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.cert-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0,245,255,0.25);
+  border-radius: 20px;
+  padding: 30px 20px 80px;
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,245,255,0.15);
+  transition: 0.5s ease;
+  z-index: 1;
+}
+.cert-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0,245,255,0.5);
+  border: 1px solid #00f5ff;
+}
+
+/* Glow Border Animation */
+.cert-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #00f5ff, #00ffea, #00f5ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: rotateBorder 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes rotateBorder { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Logo */
+.cert-card img.cert-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #00f5ff;
+  box-shadow: 0 0 15px #00f5ff55;
+  margin-bottom: 15px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+.cert-card:hover img.cert-logo {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 25px #00f5ff88;
+}
+
+/* Text */
+.cert-card h3 { font-size: 1.3rem; color: #00f5ff; margin-bottom: 6px; text-shadow: 0 0 10px #00f5ff33; }
+.cert-card p { font-size: 1rem; color: #ddd; margin-bottom: 4px; }
+.cert-card span { font-size: 0.85rem; color: #aaa; display: block; margin-bottom: 12px; }
+
+/* Button */
+.cert-card .cert-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  color: #00f5ff;
+  border: 1px solid #00f5ff;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  background: rgba(0,245,255,0.08);
+  transition: 0.3s ease;
+  z-index: 2;
+}
+.cert-card .cert-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 0 15px #00f5ff88;
+  background: #00f5ff22;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1200px) {
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns even on smaller screens */
+    gap: 30px; 
+    padding: 0 20px; 
+  }
+}
+
+@media (max-width: 992px) {
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* Maintain 2 columns */
+    gap: 20px; 
+    padding: 0 15px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .cert-grid { 
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on mobile */
+    gap: 15px; 
+    padding: 0 10px; 
+  }
+  .certifications-heading-card .section-title { font-size: 2.2rem; }
+  .certifications-heading-card .section-subtitle { font-size: 0.95rem; }
+}
